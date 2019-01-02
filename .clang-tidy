@@ -1,0 +1,7 @@
+Checks: '*,
+         -clang-analyzer-alpha.*,
+
+         -llvm-header-guard,
+         -readability-else-after-return,
+         '
+CheckOptions:

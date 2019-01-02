@@ -1,0 +1,13 @@
+# MacOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+
+# C
+*.o
+
+# Development
+build/

@@ -1,0 +1,22 @@
+[MESSAGES CONTROL]
+
+# Disable the message, report, category or checker with the given id(s).
+disable=
+  # Each algorithm is self contained and localized to improve readability, and
+  # because of this there may be duplicate code.
+  duplicate-code,
+  # Long function names (i.e. self-describing unit test method names) usually
+  # do not conform to snake_case naming style
+  invalid-name,
+  # Modules with a single object and unit tests do not need a docstring.
+  missing-docstring,
+
+
+[FORMAT]
+
+# String used as indentation unit. This is usually "    " (4 spaces) or "\t" (1
+# tab).
+indent-string='  '
+
+# Maximum number of characters on a single line.
+max-line-length=80
