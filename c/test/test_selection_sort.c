@@ -103,16 +103,6 @@ static void test_selection_sort_with_equal_elements(void) {
   test_assert(memcmp(array, expected, length * sizeof(int)) == 0);
 }
 
-static void test_selection_sort_with_no_elements(void) {
-  size_t length = 0;
-  int* array = malloc(length * sizeof(int));
-  selection_sort(array, length);
-  int* expected = malloc(length * sizeof(int));
-  test_assert(memcmp(array, expected, length * sizeof(int)) == 0);
-  free(array);
-  free(expected);
-}
-
 void test_selection_sort(void) {
   test(test_selection_sort_with_one_element);
   test(test_selection_sort_with_two_elements_1);
@@ -126,5 +116,4 @@ void test_selection_sort(void) {
   test(test_selection_sort_with_ascending_elements);
   test(test_selection_sort_with_descending_elements);
   test(test_selection_sort_with_equal_elements);
-  test(test_selection_sort_with_no_elements);
 }

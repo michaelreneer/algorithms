@@ -4,7 +4,6 @@
 #include "testc.h"
 
 #include <stddef.h>
-#include <stdlib.h>
 #include <string.h>
 
 static void test_merge_sort_bottom_up_with_one_element(void) {
@@ -103,16 +102,6 @@ static void test_merge_sort_bottom_up_with_equal_elements(void) {
   test_assert(memcmp(array, expected, (size_t)length * sizeof(int)) == 0);
 }
 
-static void test_merge_sort_bottom_up_with_no_elements(void) {
-  int length = 0;
-  int* array = malloc((size_t)length * sizeof(int));
-  merge_sort_bottom_up(array, length);
-  int* expected = malloc((size_t)length * sizeof(int));
-  test_assert(memcmp(array, expected, (size_t)length * sizeof(int)) == 0);
-  free(array);
-  free(expected);
-}
-
 void test_merge_sort_bottom_up(void) {
   test(test_merge_sort_bottom_up_with_one_element);
   test(test_merge_sort_bottom_up_with_two_elements_1);
@@ -126,5 +115,4 @@ void test_merge_sort_bottom_up(void) {
   test(test_merge_sort_bottom_up_with_ascending_elements);
   test(test_merge_sort_bottom_up_with_descending_elements);
   test(test_merge_sort_bottom_up_with_equal_elements);
-  test(test_merge_sort_bottom_up_with_no_elements);
 }
