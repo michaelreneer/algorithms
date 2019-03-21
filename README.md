@@ -14,28 +14,27 @@ algorithms are implemented in.
   cd "algorithms"
 ```
 
-2. Checkout a new branch.
+1. Checkout a new branch.
 
 ```bash
   git checkout -b "feature"
 ```
 
-3. Hack!
+1. Hack!
 
-4. Run the tests.
+1. Run the tests.
 
 ```bash
   make test
 ```
 
-5. Clean up the changes.
+1. Format the changes.
 
 ```bash
-  make lint
   make format
 ```
 
-6. Commit and push the changes.
+1. Commit and push the changes.
 
 ```bash
   git add --all
