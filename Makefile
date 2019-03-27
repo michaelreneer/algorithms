@@ -60,7 +60,7 @@ format-python:
 .PHONY: lint-python
 lint-python:
 	pylint "python/algorithms"
-	pylint "python/test" --disable=missing-docstring
+	pylint "python/test" --disable=too-many-public-methods
 
 .PHONY: test-python
 test-python:
