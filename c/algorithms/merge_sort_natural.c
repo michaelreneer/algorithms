@@ -8,6 +8,7 @@ static void merge(const int src[],
                   size_t low,
                   size_t high,
                   bool ascending) {
+  // Copy the next largest element from src to dest.
   size_t i = (ascending) ? low : high;
   size_t j = low;
   size_t k = high;

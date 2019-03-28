@@ -28,6 +28,7 @@ def merge_sort_natural(iterable):
         type(iterable).__name__))
 
   def _merge(src, dest, low, high, ascending):
+    # Copy the next largest element from src to dest.
     i = low if ascending else high
     j = low
     k = high

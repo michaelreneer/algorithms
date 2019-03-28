@@ -28,8 +28,11 @@ def merge_sort_bottom_up(iterable):
         type(iterable).__name__))
 
   def _merge(iterable, temp, low, middle, high):
+    # Copy both haves of iterable to temp.
     for i in range(low, high + 1):
       temp[i] = iterable[i]
+
+    # Copy the next largest element from temp to iterable.
     i = low
     j = low
     k = middle + 1
@@ -41,6 +44,8 @@ def merge_sort_bottom_up(iterable):
         iterable[i] = temp[k]
         k += 1
       i += 1
+
+    # Copy the remaining elements from temp to iterable.
     while j < middle + 1:
       iterable[i] = temp[j]
       i += 1

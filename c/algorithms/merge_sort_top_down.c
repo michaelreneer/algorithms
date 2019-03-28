@@ -7,9 +7,12 @@ static void merge(int array[],
                   size_t low,
                   size_t middle,
                   size_t high) {
+  // Copy both haves of array to temp.
   for (size_t i = low; i < high + 1; ++i) {
     temp[i] = array[i];
   }
+
+  // Copy the next largest element from temp to array.
   size_t i = low;
   size_t j = low;
   size_t k = middle + 1;
@@ -23,6 +26,8 @@ static void merge(int array[],
     }
     ++i;
   }
+
+  // Copy the remaining elements from temp to array.
   while (j < middle + 1) {
     array[i] = temp[j];
     ++i;
