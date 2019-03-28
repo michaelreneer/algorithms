@@ -2,20 +2,20 @@
 
 #include <stdlib.h>
 
-static int max(int a, int b) {
-  return (a > b) ? a : b;
-}
-
-static void merge(int array[], int temp[], int low, int middle, int high) {
+static void merge(int array[],
+                  int temp[],
+                  size_t low,
+                  size_t middle,
+                  size_t high) {
   // Copy both haves of array to temp.
-  for (int i = low; i < high + 1; ++i) {
+  for (size_t i = low; i < high + 1; ++i) {
     temp[i] = array[i];
   }
 
   // Copy the next largest element from temp to array.
-  int i = low;
-  int j = low;
-  int k = middle + 1;
+  size_t i = low;
+  size_t j = low;
+  size_t k = middle + 1;
   while (j < middle + 1 && k < high + 1) {
     if (temp[j] < temp[k]) {
       array[i] = temp[j];
@@ -35,20 +35,38 @@ static void merge(int array[], int temp[], int low, int middle, int high) {
   }
 }
 
-static void merge_sort_bottom_up_internal(int array[], int temp[], int length) {
-  for (int i = 1; i < length; i = i * 2) {
-    for (int j = length - 1 - i; j >= 0; j = j - i * 2) {
-      merge(array, temp, max(j - i + 1, 0), j, j + i);
+static void merge_sort_bottom_up_internal(int array[],
+                                          int temp[],
+                                          size_t length) {
+  for (size_t i = 1; i < length; i = i * 2) {
+    size_t j = length - 1 - i;
+
+    for (;;) {
+      // Do not assign a negative value to an unsigned type.
+      size_t low = 0;
+      if (j >= i - 1) {
+        low = j - i + 1;
+      }
+
+      size_t middle = j;
+      size_t high = j + i;
+      merge(array, temp, low, middle, high);
+
+      // Do not assign a negative value to an unsigned type.
+      if (j < i * 2) {
+        break;
+      }
+      j = j - i * 2;
     }
   }
 }
 
-void merge_sort_bottom_up(int array[], int length) {
+void merge_sort_bottom_up(int array[], size_t length) {
   if (length == 0) {
     return;
   }
 
-  int* temp = malloc((size_t)length * sizeof(int));
+  int* temp = malloc(length * sizeof(int));
   merge_sort_bottom_up_internal(array, temp, length);
   free(temp);
 }
