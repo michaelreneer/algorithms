@@ -20,8 +20,8 @@ def fibonacci_iterative(number):
   """
   if number == 0 or number == 1:
     return number
-  a = 0
-  b = 1
+  previous = 0
+  current = 1
   for _ in range(2, number + 1):
-    a, b = b, a + b
-  return b
+    previous, current = current, previous + current
+  return current

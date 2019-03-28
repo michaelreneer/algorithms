@@ -5,12 +5,9 @@ disable=
   # Each algorithm is self contained and localized to improve readability, and
   # because of this there may be duplicate code.
   duplicate-code,
-  # Long function names (i.e. self-describing unit test method names) usually
-  # do not conform to snake_case naming style
-  invalid-name,
   # Modules with a single object and unit tests do not need a docstring.
+  # https://github.com/PyCQA/pylint/issues/1164
   missing-docstring,
-
 
 [FORMAT]
 
