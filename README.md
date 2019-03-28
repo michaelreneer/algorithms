@@ -28,6 +28,12 @@ algorithms are implemented in.
   make test
 ```
 
+1. Fix lint warnings.
+
+```bash
+  make lint
+```
+
 1. Format the changes.
 
 ```bash
