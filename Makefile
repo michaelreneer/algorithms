@@ -38,7 +38,8 @@ lint-c:
 	clang-tidy \
 		$(HDRS) $(SRCS) $(TEST_HDRS) $(TEST_SRCS) \
 		-- \
-		$(CPPFLAGS)
+		$(CPPFLAGS) \
+		|| true
 
 .PHONY: test-c
 test-c: $(OBJS) $(TEST_OBJS)
